@@ -2,11 +2,13 @@
 
 const openBtn=document.getElementById("openBtn")
 const music=document.getElementById("bgMusic")
+const intro=document.getElementById("intro")
+const website=document.getElementById("website")
 
 openBtn.onclick=function(){
 
-document.getElementById("intro").style.display="none"
-document.getElementById("website").style.display="block"
+intro.style.display="none"
+website.style.display="block"
 
 music.play()
 
@@ -28,17 +30,6 @@ musicBtn.innerText="🔊"
 
 music.pause()
 musicBtn.innerText="🔇"
-
-}
-
-openBtn.onclick = () => {
-
-intro.classList.add("hide");
-
-setTimeout(()=>{
-website.classList.add("show");
-intro.style.display="none";
-},1000);
 
 }
 
@@ -102,7 +93,7 @@ document.getElementById("copyMsg").innerText=hex+" copied!"
 })
 
 
-/* PETAL SYSTEM */
+/* PETALS */
 
 const back=document.querySelector(".back")
 const mid=document.querySelector(".mid")
@@ -124,11 +115,6 @@ petal.style.width=size+"px"
 const duration=Math.random()*(maxSpeed-minSpeed)+minSpeed
 petal.style.animationDuration=duration+"s"
 
-const rotate=Math.random()*360
-petal.style.transform="rotate("+rotate+"deg)"
-
-petal.style.animationDelay=Math.random()*2+"s"
-
 layer.appendChild(petal)
 
 setTimeout(()=>{
@@ -138,8 +124,6 @@ petal.remove()
 }
 
 
-/* INITIAL PETALS */
-
 for(let i=0;i<4;i++){
 
 spawnPetal(back,20,30,14,18)
@@ -147,9 +131,6 @@ spawnPetal(mid,30,40,12,16)
 spawnPetal(front,40,55,10,14)
 
 }
-
-
-/* CONTINUOUS PETALS */
 
 setInterval(()=>spawnPetal(back,20,30,14,18),2600)
 setInterval(()=>spawnPetal(mid,30,40,12,16),2000)
