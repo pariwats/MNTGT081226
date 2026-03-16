@@ -31,6 +31,17 @@ musicBtn.innerText="🔇"
 
 }
 
+openBtn.onclick = () => {
+
+intro.classList.add("hide");
+
+setTimeout(()=>{
+website.classList.add("show");
+intro.style.display="none";
+},1000);
+
+}
+
 }
 
 

@@ -110,7 +110,7 @@ margin-top:20px;
 }
 
 .container{
-max-width:900px;
+max-width:1200px;
 margin:auto;
 }
 
@@ -119,8 +119,8 @@ margin:auto;
 
 .coverimg,
 .inviteimg{
-width:95%;
-max-width:900px;
+width:100%;
+max-width:1200px;
 border-radius:20px;
 }
 
@@ -174,8 +174,8 @@ text-align:center;
 
 .flip-card{
 background:white;
-font-size:70px;
-padding:30px 40px;
+font-size:90px;
+padding:35px 55px;
 border-radius:12px;
 box-shadow:0 10px 25px rgba(0,0,0,0.2);
 font-weight:bold;
@@ -293,8 +293,8 @@ margin-top:40px;
 }
 
 .map-btn{
-padding:20px 50px;
-font-size:22px;
+padding:26px 80px;
+font-size:26px;
 border-radius:40px;
 text-decoration:none;
 color:white;
@@ -319,8 +319,8 @@ flex-wrap:wrap;
 }
 
 .map-btn{
-padding:22px 60px;
-font-size:22px;
+padding:26px 80px;
+font-size:26px;
 border-radius:40px;
 text-decoration:none;
 color:white;
@@ -333,4 +333,12 @@ transition:all 0.3s ease;
 .map-btn:hover{
 transform:scale(1.1);
 box-shadow:0 15px 30px rgba(0,0,0,0.25);
+}
+
+#intro{
+transition:opacity 2s ease;
+}
+
+#intro.hide{
+opacity:0;
 }
