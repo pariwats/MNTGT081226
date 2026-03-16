@@ -4,7 +4,6 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Wedding Invitation</title>
 
 <link rel="stylesheet" href="style.css">
@@ -13,9 +12,20 @@
 
 <body>
 
-<div class="petals"></div>
+<!-- PETAL LAYERS -->
 
-<audio id="music" src="music.mp3"></audio>
+<div class="petal-layer back"></div>
+<div class="petal-layer mid"></div>
+<div class="petal-layer front"></div>
+
+
+<!-- MUSIC BUTTON -->
+
+<button id="musicToggle" class="music-btn">🔊</button>
+
+<audio id="bgMusic" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
 
 
 <!-- INTRO -->
@@ -54,7 +64,6 @@ Open Invitation
 </section>
 
 
-
 <!-- COLOR PALETTE -->
 
 <section class="palette-section">
@@ -75,7 +84,6 @@ Open Invitation
 <p id="copyMsg"></p>
 
 </section>
-
 
 
 <!-- COUNTDOWN -->
@@ -113,16 +121,12 @@ Open Invitation
 
 <button class="mapBtn"
 onclick="window.open('https://maps.app.goo.gl/aiseHzXhdrjvShcBA')">
-
 Google Map
-
 </button>
 
 <button class="formBtn"
 onclick="window.open('https://forms.gle/wTRDHmAgTa95zcqJ9')">
-
 แบบสอบถาม
-
 </button>
 
 </div>
@@ -135,5 +139,4 @@ onclick="window.open('https://forms.gle/wTRDHmAgTa95zcqJ9')">
 <script src="script.js"></script>
 
 </body>
-
 </html>
