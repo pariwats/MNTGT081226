@@ -1,16 +1,10 @@
 body{
 margin:0;
 font-family:sans-serif;
-background:#f3f3f3;
-overflow-x:hidden;
-}
-
-body{
-margin:0;
-font-family:sans-serif;
 background:linear-gradient(#eaf6ff,#ffffff);
 overflow-x:hidden;
 }
+
 
 /* INTRO */
 
@@ -53,26 +47,8 @@ display:none;
 }
 
 section{
-padding:20px 20px 100px 10px;
+padding:40px 20px;
 text-align:center;
-}
-
-#invite{
-margin-bottom:20px;
-}
-
-#palette{
-margin-top:20px;
-margin-bottom:20px;
-}
-
-#countdown{
-margin-top:20px;
-}
-
-.container{
-max-width:1200px;
-margin:auto;
 }
 
 
@@ -119,6 +95,36 @@ color:#777;
 }
 
 
+/* BIG BUTTONS */
+
+.big-buttons{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-top:60px;
+flex-wrap:wrap;
+}
+
+.map-btn{
+padding:24px 70px;
+font-size:24px;
+border-radius:50px;
+text-decoration:none;
+color:white;
+font-weight:600;
+
+background:linear-gradient(135deg,#6EC6FF,#3FA9F5);
+
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+transition:all 0.3s ease;
+}
+
+.map-btn:hover{
+transform:scale(1.08);
+box-shadow:0 15px 30px rgba(0,0,0,0.25);
+}
+
+
 /* COUNTDOWN */
 
 .flip-clock{
@@ -145,33 +151,6 @@ transition:transform .5s;
 
 .flip{
 transform:rotateX(360deg);
-}
-
-
-/* BUTTONS */
-
-.buttons{
-display:flex;
-justify-content:center;
-gap:30px;
-margin-top:40px;
-}
-
-.buttons a{
-padding:22px 60px;
-font-size:22px;
-border-radius:40px;
-text-decoration:none;
-color:white;
-font-weight:600;
-background:linear-gradient(135deg,#E8A7A0,#CFB3A9);
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-transition:all 0.3s ease;
-border:none;
-}
-
-.buttons a:hover{
-transform:scale(1.1);
 }
 
 
@@ -215,9 +194,6 @@ top:-80px;
 animation:fall linear forwards;
 }
 
-
-/* NATURAL WIND FALL */
-
 @keyframes fall{
 
 0%{
@@ -246,60 +222,27 @@ transform:translate(-10px,110vh) rotate(360deg);
 opacity:.85;
 }
 
+}
+
+
+/* MOBILE */
+
+@media (max-width:600px){
+
 .big-buttons{
-display:flex;
-justify-content:center;
-gap:40px;
-margin-top:40px;
+flex-direction:column;
+align-items:center;
+gap:20px;
 }
 
 .map-btn{
-padding:26px 80px;
-font-size:26px;
-border-radius:40px;
-text-decoration:none;
-color:white;
-font-weight:600;
-background:linear-gradient(135deg,#ff8a8a,#ffd6d6);
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-transition:all 0.3s ease;
+width:80%;
+text-align:center;
 }
 
-.map-btn:hover{
-transform:scale(1.08);
+.flip-card{
+font-size:60px;
+padding:30px 40px;
 }
 
-/* BIG WEDDING BUTTONS */
-
-.big-buttons{
-display:flex;
-justify-content:center;
-gap:40px;
-margin-top:50px;
-flex-wrap:wrap;
-}
-
-.map-btn{
-padding:26px 80px;
-font-size:26px;
-border-radius:40px;
-text-decoration:none;
-color:white;
-font-weight:600;
-background:linear-gradient(135deg,#E8A7A0,#CFB3A9);
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-transition:all 0.3s ease;
-}
-
-.map-btn:hover{
-transform:scale(1.1);
-box-shadow:0 15px 30px rgba(0,0,0,0.25);
-}
-
-#intro{
-transition:opacity 2s ease;
-}
-
-#intro.hide{
-opacity:0;
 }
