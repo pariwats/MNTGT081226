@@ -66,22 +66,33 @@ text-align:center;
 
 .palette{
 display:grid;
-grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-gap:20px;
-max-width:600px;
+grid-template-columns: repeat(3, 1fr);
+gap:30px;
+max-width:900px;
 margin:40px auto;
 }
 
 .color{
-width:100%;
-aspect-ratio:1/1;
-border-radius:18px;
-display:flex;
+display:flex;                /* 🔥 ทำให้ขยาย */
 align-items:center;
 justify-content:center;
-font-weight:600;
-font-size:14px;
-color:#000;
+
+height:180px;                /* 🔥 ขนาดใหญ่เหมือนเดิม */
+border-radius:20px;
+
+font-weight:bold;
+font-size:18px;
+
+text-decoration:none;        /* 🔥 เอาเส้นใต้ลิงก์ออก */
+color:black;
+
+transition:0.3s;
+}
+
+.color:hover{
+transform:scale(1.05);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
 
 /* 🔥 ทำให้สีตรง */
 opacity:1;

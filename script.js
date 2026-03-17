@@ -64,7 +64,6 @@ el.classList.remove("flip")
 document.querySelectorAll(".color").forEach(c=>{
 c.onclick=function(){
 const hex=this.getAttribute("data")
-navigator.clipboard.writeText(hex)
 document.getElementById("copyMsg").innerText=hex+" copied!"
 }
 })
