@@ -81,29 +81,35 @@ align-items:center;
 justify-content:center;
 font-weight:600;
 font-size:14px;
-color:#333;
+color:#000;
 
 /* 🔥 ทำให้สีตรง */
 opacity:1;
 filter:none;
 mix-blend-mode:normal;
 
-/* 🔥 เงาเบาลง */
-box-shadow:0 4px 10px rgba(0,0,0,0.08);
+/* ✅ ทำให้สีไม่เพี้ยน */
+box-shadow:none;
+
+/* ✅ สำคัญที่สุด */
+background-clip:padding-box;
+opacity:1;
+filter:none;
+mix-blend-mode:normal;
 
 /* 🔥 ขอบแบบ Coolors */
 border:1px solid rgba(0,0,0,0.05);
 
-transition:0.3s;
+transition:0.2s;
 }
 
 /* สีจริงจากคุณ (ตรง 100%) */
-.color1 { background:#A09086; }
+.color1 { background:#AB9384; }
 .color2 { background:#D1C7BE; }
 .color3 { background:#ECE4D9; }
 .color4 { background:#E8D6D4; }
 .color5 { background:#EBCFCC; }
-.color6 { background:#CFB3A9; }
+.color6 { background:#D4B0A5; }
 
 .color:hover{
 transform:scale(1.05);
@@ -171,9 +177,10 @@ z-index:9999;
 /* PETALS */
 
 .petal{
-position:absolute;
+position:fixed; /* 🔥 สำคัญ เปลี่ยนจาก absolute */
 top:-100px;
-will-change:transform;
+pointer-events:none;
+z-index:1;
 }
 
 @keyframes fall {
@@ -185,10 +192,10 @@ opacity:0;
 opacity:1;
 }
 50%{
-transform: translate(var(--drift), 50vh) rotate(180deg);
+transform: translate(var(--drift), 60vh) rotate(180deg);
 }
 100%{
-transform: translate(calc(var(--drift)*1.5), 110vh) rotate(360deg);
-opacity:0.9;
+transform: translate(calc(var(--drift)*1.2), 130vh) rotate(360deg);
+opacity:0.95;
 }
 }
