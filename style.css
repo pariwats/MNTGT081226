@@ -161,28 +161,32 @@ overflow:hidden;
 
 .petal{
 position:absolute;
-top:-120px;
-animation-name:fall, sway, spin;
-animation-timing-function:linear, ease-in-out, linear;
-animation-iteration-count:1, infinite, infinite;
+top:-100px;
+will-change:transform;
 }
 
 /* ตก */
 @keyframes fall{
-0%{transform:translateY(-120px); opacity:0;}
+0%{
+transform:translateY(-100px) rotate(0deg);
+opacity:0;
+}
 10%{opacity:1;}
-100%{transform:translateY(110vh); opacity:0.9;}
+100%{
+transform:translateY(110vh) rotate(360deg);
+opacity:0.9;
+}
 }
 
 /* ลม */
 @keyframes sway{
-0%{transform:translateX(0)}
-50%{transform:translateX(30px)}
-100%{transform:translateX(0)}
+0%{ transform: translateX(0); }
+50%{ transform: translateX(var(--drift)); }
+100%{ transform: translateX(0); }
 }
 
 /* หมุน */
 @keyframes spin{
-0%{rotate:0deg}
-100%{rotate:360deg}
+0%{ rotate:0deg }
+100%{ rotate:360deg }
 }

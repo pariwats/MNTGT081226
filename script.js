@@ -81,52 +81,35 @@ const petal=document.createElement("img")
 petal.src="petal.png"
 petal.className="petal"
 
-// ✅ กระจายทั้งหน้าจอจริง (ไม่กองซ้าย)
-petal.style.left = Math.random() * 100 + "vw"
+petal.style.left = Math.random()*100 + "vw"
+petal.style.top = (-Math.random()*200) + "px"
 
-// ✅ เพิ่ม offset เริ่มต้นสุ่ม (ไม่เริ่มตรงขอบเดียวกัน)
-const startOffset = Math.random() * -200
-petal.style.top = startOffset + "px"
+const size = Math.random()*(maxSize-minSize)+minSize
+petal.style.width = size + "px"
 
-// ✅ ขนาดสุ่ม
-const size=Math.random()*(maxSize-minSize)+minSize
-petal.style.width=size+"px"
+const duration = Math.random()*(maxSpeed-minSpeed)+minSpeed
 
-// ✅ ความเร็วสุ่ม
-const duration=Math.random()*(maxSpeed-minSpeed)+minSpeed
+const drift = (Math.random()-0.5)*150
+petal.style.setProperty('--drift', drift+"px")
 
-// ✅ เพิ่ม drift ซ้ายขวา “ไม่เท่ากัน”
-const drift = (Math.random() - 0.5) * 200 // -100 ถึง 100px
-
-petal.style.animation = `
-fall ${duration}s linear forwards,
-sway ${duration * 0.7}s ease-in-out infinite,
-spin ${duration * 0.8}s linear infinite
-`
-
-// ✅ custom property ให้ sway ใช้
-petal.style.setProperty('--drift', drift + 'px')
-
-// delay แบบสุ่ม
-petal.style.animationDelay = `${Math.random()*2}s, 0s, 0s`
+petal.style.animation = `fall ${duration}s linear forwards`
 
 layer.appendChild(petal)
 
-// ลบเมื่อจบ
 setTimeout(()=>{
 petal.remove()
 },duration*1000)
 
 }
 
-// เริ่มต้น
-for(let i=0;i<3;i++){
-spawnPetal(back,20,30,14,18)
-spawnPetal(mid,30,40,12,16)
-spawnPetal(front,40,55,10,14)
+/* เริ่มต้น */
+for(let i=0;i<5;i++){
+spawnPetal(back,20,30,12,18)
+spawnPetal(mid,30,40,10,16)
+spawnPetal(front,40,55,8,14)
 }
 
-// spawn ต่อเนื่อง (บาลานซ์แล้ว)
-setInterval(()=>spawnPetal(back,20,30,14,18),3000)
-setInterval(()=>spawnPetal(mid,30,40,12,16),2300)
-setInterval(()=>spawnPetal(front,40,55,10,14),1800)
+/* ต่อเนื่อง */
+setInterval(()=>spawnPetal(back,20,30,12,18),2500)
+setInterval(()=>spawnPetal(mid,30,40,10,16),2000)
+setInterval(()=>spawnPetal(front,40,55,8,14),1500)
