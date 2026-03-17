@@ -48,26 +48,17 @@ box-shadow:0 8px 20px rgba(0,0,0,0.2);
 display:none;
 }
 
-/* FULL IMAGE (เหมือน IG) */
-
-.full-image{
-padding:0;
-}
+/* IMAGE FULL */
 
 .full-image img{
 width:100%;
-height:auto;
 display:block;
 }
 
-/* CENTER SECTION */
+/* CENTER */
 
 .center-section{
 padding:60px 20px;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
 text-align:center;
 }
 
@@ -77,6 +68,7 @@ text-align:center;
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:20px;
+justify-content:center;
 margin-top:20px;
 }
 
@@ -88,10 +80,11 @@ display:flex;
 align-items:center;
 justify-content:center;
 font-weight:bold;
+margin:auto;
 box-shadow:0 6px 15px rgba(0,0,0,0.15);
 }
 
-/* BUTTONS */
+/* BUTTON */
 
 .big-buttons{
 display:flex;
@@ -133,7 +126,7 @@ box-shadow:0 10px 25px rgba(0,0,0,0.2);
 font-weight:bold;
 }
 
-/* MUSIC BUTTON */
+/* MUSIC */
 
 .music-btn{
 position:fixed;
@@ -165,3 +158,31 @@ overflow:hidden;
 .back{z-index:1}
 .mid{z-index:2}
 .front{z-index:3}
+
+.petal{
+position:absolute;
+top:-120px;
+animation-name:fall, sway, spin;
+animation-timing-function:linear, ease-in-out, linear;
+animation-iteration-count:1, infinite, infinite;
+}
+
+/* ตก */
+@keyframes fall{
+0%{transform:translateY(-120px); opacity:0;}
+10%{opacity:1;}
+100%{transform:translateY(110vh); opacity:0.9;}
+}
+
+/* ลม */
+@keyframes sway{
+0%{transform:translateX(0)}
+50%{transform:translateX(30px)}
+100%{transform:translateX(0)}
+}
+
+/* หมุน */
+@keyframes spin{
+0%{rotate:0deg}
+100%{rotate:360deg}
+}
