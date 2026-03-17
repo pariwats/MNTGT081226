@@ -81,35 +81,40 @@ const petal=document.createElement("img")
 petal.src="petal.png"
 petal.className="petal"
 
+/* 🔥 กระจายเริ่มต้น */
 petal.style.left = Math.random()*100 + "vw"
-petal.style.top = (-Math.random()*200) + "px"
+petal.style.top = (-50 - Math.random()*150) + "px"
 
+/* 🔥 ขนาด */
 const size = Math.random()*(maxSize-minSize)+minSize
 petal.style.width = size + "px"
 
+/* 🔥 ความเร็ว */
 const duration = Math.random()*(maxSpeed-minSpeed)+minSpeed
 
-const drift = (Math.random()-0.5)*150
+/* 🔥 ลม (ลดความแรงลง) */
+const drift = (Math.random()-0.5)*80
 petal.style.setProperty('--drift', drift+"px")
 
+/* 🔥 animation */
 petal.style.animation = `fall ${duration}s linear forwards`
 
 layer.appendChild(petal)
 
+/* 🔥 ลบหลัง animation จบจริง */
 setTimeout(()=>{
 petal.remove()
-},duration*1000)
-
+},(duration+2)*1000) /* เผื่อเวลา */
 }
 
-// เริ่มต้น (ลดลง)
-for(let i=0;i<2;i++){
+// เริ่มต้น
+for(let i=0;i<1;i++){  // 🔥 จาก 2 → 1
 spawnPetal(back,20,30,12,18)
 spawnPetal(mid,30,40,10,16)
 spawnPetal(front,40,55,8,14)
 }
 
 // ตกต่อเนื่อง (ช้าลง)
-setInterval(()=>spawnPetal(back,20,30,12,18),4500)
-setInterval(()=>spawnPetal(mid,30,40,10,16),3500)
-setInterval(()=>spawnPetal(front,40,55,8,14),2800)
+setInterval(()=>spawnPetal(back,20,30,12,18),6000)
+setInterval(()=>spawnPetal(mid,30,40,10,16),5000)
+setInterval(()=>spawnPetal(front,40,55,8,14),4000)
