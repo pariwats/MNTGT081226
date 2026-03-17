@@ -2,136 +2,98 @@
 <html>
 
 <head>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wedding Invitation</title>
-
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
 <!-- PETALS -->
-
 <div class="petal-layer back"></div>
 <div class="petal-layer mid"></div>
 <div class="petal-layer front"></div>
 
-
 <!-- MUSIC BUTTON -->
-
 <button id="musicToggle" class="music-btn">🔊</button>
 
 <audio id="bgMusic" loop>
 <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-
 <!-- INTRO -->
-
 <div id="intro">
-
-<img src="envelope.png" class="envelope">
-
-<button id="openBtn">
-Open Invitation
-</button>
-
+    <img src="envelope.png" class="envelope">
+    <button id="openBtn">Open Invitation</button>
 </div>
-
 
 <!-- WEBSITE -->
-
 <div id="website">
 
+    <!-- COVER (เต็มจอแบบ IG) -->
+    <section class="full-image">
+        <img src="cover.png">
+    </section>
 
-<!-- COVER -->
+    <!-- INVITE -->
+    <section class="full-image">
+        <img src="invite.png">
+    </section>
 
-<section>
+    <!-- COLOR PALETTE -->
+    <section class="center-section">
 
-<img src="cover.png" class="coverimg">
+        <h2>Wedding Color Palette</h2>
 
-</section>
+        <div class="palette">
+            <div class="color" style="background:#A09086">#A09086</div>
+            <div class="color" style="background:#D1C7BE">#D1C7BE</div>
+            <div class="color" style="background:#ECE4D9">#ECE4D9</div>
+            <div class="color" style="background:#E8D6D4">#E8D6D4</div>
+            <div class="color" style="background:#EBCFCC">#EBCFCC</div>
+            <div class="color" style="background:#CFB3A9">#CFB3A9</div>
+        </div>
 
+        <p id="copyMsg"></p>
 
-<!-- INVITE -->
+    </section>
 
-<section>
+    <!-- BUTTONS -->
+    <div class="big-buttons">
+        <a href="LINK_GOOGLE_MAP" class="map-btn" target="_blank">📍 Google Map</a>
+        <a href="LINK_FORM" class="map-btn" target="_blank">💌 แบบสอบถาม</a>
+    </div>
 
-<img src="invite.png" class="inviteimg">
+    <!-- COUNTDOWN -->
+    <section class="center-section">
 
-</section>
+        <h2>Countdown to Our Wedding</h2>
 
+        <div class="flip-clock">
 
-<!-- COLOR PALETTE -->
+            <div class="flip-unit">
+                <div class="flip-card" id="days">00</div>
+                <p>DAYS</p>
+            </div>
 
-<section>
+            <div class="flip-unit">
+                <div class="flip-card" id="hours">00</div>
+                <p>HOURS</p>
+            </div>
 
-<h2>Wedding Color Palette</h2>
+            <div class="flip-unit">
+                <div class="flip-card" id="minutes">00</div>
+                <p>MINUTES</p>
+            </div>
 
-<div class="palette">
+            <div class="flip-unit">
+                <div class="flip-card" id="seconds">00</div>
+                <p>SECONDS</p>
+            </div>
 
-<div class="color" data="#A09086" style="background:#A09086">#A09086</div>
-<div class="color" data="#D1C7BE" style="background:#D1C7BE">#D1C7BE</div>
-<div class="color" data="#ECE4D9" style="background:#ECE4D9">#ECE4D9</div>
-<div class="color" data="#E8D6D4" style="background:#E8D6D4">#E8D6D4</div>
-<div class="color" data="#EBCFCC" style="background:#EBCFCC">#EBCFCC</div>
-<div class="color" data="#CFB3A9" style="background:#CFB3A9">#CFB3A9</div>
+        </div>
 
-</div>
-
-<p id="copyMsg"></p>
-
-</section>
-
-
-<!-- BIG BUTTONS -->
-
-<div class="big-buttons">
-
-<a href="LINK_GOOGLE_MAP" class="map-btn" target="_blank">
-📍 Google Map
-</a>
-
-<a href="LINK_FORM" class="map-btn" target="_blank">
-💌 แบบสอบถาม
-</a>
-
-</div>
-
-
-<!-- COUNTDOWN -->
-
-<section>
-
-<h2>Countdown to Our Wedding</h2>
-
-<div class="flip-clock">
-
-<div class="flip-unit">
-<div class="flip-card" id="days">00</div>
-<p>DAYS</p>
-</div>
-
-<div class="flip-unit">
-<div class="flip-card" id="hours">00</div>
-<p>HOURS</p>
-</div>
-
-<div class="flip-unit">
-<div class="flip-card" id="minutes">00</div>
-<p>MINUTES</p>
-</div>
-
-<div class="flip-unit">
-<div class="flip-card" id="seconds">00</div>
-<p>SECONDS</p>
-</div>
-
-</div>
-
-</section>
+    </section>
 
 </div>
 
