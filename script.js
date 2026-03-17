@@ -81,22 +81,38 @@ const petal=document.createElement("img")
 petal.src="petal.png"
 petal.className="petal"
 
-// ตำแหน่งสุ่ม
-petal.style.left=Math.random()*100+"vw"
+// ✅ กระจายทั้งหน้าจอจริง (ไม่กองซ้าย)
+petal.style.left = Math.random() * 100 + "vw"
 
-// ขนาดสุ่ม
+// ✅ เพิ่ม offset เริ่มต้นสุ่ม (ไม่เริ่มตรงขอบเดียวกัน)
+const startOffset = Math.random() * -200
+petal.style.top = startOffset + "px"
+
+// ✅ ขนาดสุ่ม
 const size=Math.random()*(maxSize-minSize)+minSize
 petal.style.width=size+"px"
 
-// ความเร็วสุ่ม
+// ✅ ความเร็วสุ่ม
 const duration=Math.random()*(maxSpeed-minSpeed)+minSpeed
-petal.style.animationDuration = `${duration}s, ${duration*0.7}s, ${duration*0.8}s`
 
-// delay
-petal.style.animationDelay = `0s, ${Math.random()*2}s, 0s`
+// ✅ เพิ่ม drift ซ้ายขวา “ไม่เท่ากัน”
+const drift = (Math.random() - 0.5) * 200 // -100 ถึง 100px
+
+petal.style.animation = `
+fall ${duration}s linear forwards,
+sway ${duration * 0.7}s ease-in-out infinite,
+spin ${duration * 0.8}s linear infinite
+`
+
+// ✅ custom property ให้ sway ใช้
+petal.style.setProperty('--drift', drift + 'px')
+
+// delay แบบสุ่ม
+petal.style.animationDelay = `${Math.random()*2}s, 0s, 0s`
 
 layer.appendChild(petal)
 
+// ลบเมื่อจบ
 setTimeout(()=>{
 petal.remove()
 },duration*1000)
