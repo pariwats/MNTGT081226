@@ -48,15 +48,16 @@ display:none;
 
 section{
 padding:40px 0;
-text-align:center;
+display:flex;
+justify-content:center;
 }
 
 /* IMAGES */
 
 .coverimg,
 .inviteimg{
-width:100%;
-display:block;
+width:92%;
+max-width:500px;
 }
 
 
@@ -249,6 +250,33 @@ overflow-x:hidden;
 
 html, body{
 max-width:100%;
+overflow-x:hidden;
+}
+
+/* แก้ layout เบี้ยวทั้งเว็บ */
+*{
+box-sizing: border-box;
+}
+
+/* แก้ container สีฟ้า */
+section{
+width:100%;
+padding:40px 0;
+margin:0;
+}
+
+/* บังคับให้ทุกอย่างอยู่กลางจริง */
+.coverimg,
+.inviteimg{
+display:block;
+width:90%;
+max-width:500px;
+margin-left:auto;
+margin-right:auto;
+}
+
+/* กันล้นจอ (ตัวสำคัญมาก) */
+html, body{
 overflow-x:hidden;
 }
 
