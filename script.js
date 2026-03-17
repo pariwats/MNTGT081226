@@ -102,14 +102,14 @@ petal.remove()
 
 }
 
-/* เริ่มต้น */
-for(let i=0;i<5;i++){
+// เริ่มต้น (ลดลง)
+for(let i=0;i<2;i++){
 spawnPetal(back,20,30,12,18)
 spawnPetal(mid,30,40,10,16)
 spawnPetal(front,40,55,8,14)
 }
 
-/* ต่อเนื่อง */
-setInterval(()=>spawnPetal(back,20,30,12,18),2500)
-setInterval(()=>spawnPetal(mid,30,40,10,16),2000)
-setInterval(()=>spawnPetal(front,40,55,8,14),1500)
+// ตกต่อเนื่อง (ช้าลง)
+setInterval(()=>spawnPetal(back,20,30,12,18),4500)
+setInterval(()=>spawnPetal(mid,30,40,10,16),3500)
+setInterval(()=>spawnPetal(front,40,55,8,14),2800)

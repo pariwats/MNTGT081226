@@ -66,22 +66,47 @@ text-align:center;
 
 .palette{
 display:grid;
-grid-template-columns:repeat(2,1fr);
+grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 gap:20px;
-justify-content:center;
-margin-top:20px;
+max-width:600px;
+margin:40px auto;
 }
 
 .color{
-width:140px;
-height:140px;
-border-radius:16px;
+width:100%;
+aspect-ratio:1/1;
+border-radius:18px;
 display:flex;
 align-items:center;
 justify-content:center;
-font-weight:bold;
-margin:auto;
-box-shadow:0 6px 15px rgba(0,0,0,0.15);
+font-weight:600;
+font-size:14px;
+color:#333;
+
+/* 🔥 ทำให้สีตรง */
+opacity:1;
+filter:none;
+mix-blend-mode:normal;
+
+/* 🔥 เงาเบาลง */
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+
+/* 🔥 ขอบแบบ Coolors */
+border:1px solid rgba(0,0,0,0.05);
+
+transition:0.3s;
+}
+
+/* สีจริงจากคุณ (ตรง 100%) */
+.color1 { background:#A09086; }
+.color2 { background:#D1C7BE; }
+.color3 { background:#ECE4D9; }
+.color4 { background:#E8D6D4; }
+.color5 { background:#EBCFCC; }
+.color6 { background:#CFB3A9; }
+
+.color:hover{
+transform:scale(1.05);
 }
 
 /* BUTTON */
@@ -151,7 +176,6 @@ top:-100px;
 will-change:transform;
 }
 
-/* รวมทุกอย่างใน animation เดียว */
 @keyframes fall {
 0%{
 transform: translate(0px, -100px) rotate(0deg);
