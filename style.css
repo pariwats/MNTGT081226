@@ -73,20 +73,24 @@ margin:40px auto;
 }
 
 .color{
-display:flex;                /* 🔥 ทำให้ขยาย */
+display:flex;
 align-items:center;
 justify-content:center;
-
-height:180px;                /* 🔥 ขนาดใหญ่เหมือนเดิม */
+height:180px;
 border-radius:20px;
-
 font-weight:bold;
 font-size:18px;
-
-text-decoration:none;        /* 🔥 เอาเส้นใต้ลิงก์ออก */
+text-decoration:none;
 color:black;
-
 transition:0.3s;
+
+/* FIX สี */
+opacity:1;
+filter:none;
+mix-blend-mode:normal;
+box-shadow:none;
+background-clip:padding-box;
+border:1px solid rgba(0,0,0,0.05);
 }
 
 .color:hover{
@@ -94,37 +98,13 @@ transform:scale(1.05);
 box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* 🔥 ทำให้สีตรง */
-opacity:1;
-filter:none;
-mix-blend-mode:normal;
-
-/* ✅ ทำให้สีไม่เพี้ยน */
-box-shadow:none;
-
-/* ✅ สำคัญที่สุด */
-background-clip:padding-box;
-opacity:1;
-filter:none;
-mix-blend-mode:normal;
-
-/* 🔥 ขอบแบบ Coolors */
-border:1px solid rgba(0,0,0,0.05);
-
-transition:0.2s;
-}
-
-/* สีจริงจากคุณ (ตรง 100%) */
+/* สีจริง */
 .color1 { background:#AB9384; }
 .color2 { background:#D1C7BE; }
 .color3 { background:#ECE4D9; }
 .color4 { background:#E8D6D4; }
 .color5 { background:#EBCFCC; }
 .color6 { background:#D4B0A5; }
-
-.color:hover{
-transform:scale(1.05);
-}
 
 /* BUTTON */
 
@@ -188,7 +168,7 @@ z-index:9999;
 /* PETALS */
 
 .petal{
-position:fixed; /* 🔥 สำคัญ เปลี่ยนจาก absolute */
+position:fixed;
 top:-100px;
 pointer-events:none;
 z-index:1;
