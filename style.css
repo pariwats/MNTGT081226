@@ -145,48 +145,26 @@ z-index:9999;
 
 /* PETALS */
 
-.petal-layer{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-overflow:hidden;
-}
-
-.back{z-index:1}
-.mid{z-index:2}
-.front{z-index:3}
-
 .petal{
 position:absolute;
 top:-100px;
 will-change:transform;
 }
 
-/* ตก */
-@keyframes fall{
+/* รวมทุกอย่างใน animation เดียว */
+@keyframes fall {
 0%{
-transform:translateY(-100px) rotate(0deg);
+transform: translate(0px, -100px) rotate(0deg);
 opacity:0;
 }
-10%{opacity:1;}
+10%{
+opacity:1;
+}
+50%{
+transform: translate(var(--drift), 50vh) rotate(180deg);
+}
 100%{
-transform:translateY(110vh) rotate(360deg);
+transform: translate(calc(var(--drift)*1.5), 110vh) rotate(360deg);
 opacity:0.9;
 }
-}
-
-/* ลม */
-@keyframes sway{
-0%{ transform: translateX(0); }
-50%{ transform: translateX(var(--drift)); }
-100%{ transform: translateX(0); }
-}
-
-/* หมุน */
-@keyframes spin{
-0%{ rotate:0deg }
-100%{ rotate:360deg }
 }
