@@ -47,21 +47,19 @@ display:none;
 }
 
 section{
-padding:40px 20px;
+padding:40px 0;
 text-align:center;
-max-width:1200px;
-margin:auto;
 }
 
 /* IMAGES */
 
 .coverimg,
 .inviteimg{
-width:100%;
-max-width:900px;
-border-radius:25px;
+width:92%;
+max-width:500px;
 display:block;
-margin:auto;
+margin:0 auto;
+border-radius:25px;
 }
 
 
@@ -246,6 +244,15 @@ text-align:center;
 .flip-card{
 font-size:60px;
 padding:30px 40px;
+}
+
+body{
+overflow-x:hidden;
+}
+
+html, body{
+max-width:100%;
+overflow-x:hidden;
 }
 
 }
