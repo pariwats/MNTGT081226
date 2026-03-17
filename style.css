@@ -55,11 +55,8 @@ text-align:center;
 
 .coverimg,
 .inviteimg{
-width:92%;
-max-width:500px;
+width:100%;
 display:block;
-margin:0 auto;
-border-radius:25px;
 }
 
 
