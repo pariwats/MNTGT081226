@@ -2,7 +2,6 @@ body{
 margin:0;
 font-family:sans-serif;
 background:linear-gradient(#eaf6ff,#ffffff);
-overflow-x:hidden;
 }
 
 *{
@@ -12,7 +11,7 @@ box-sizing:border-box;
 /* INTRO */
 
 #intro{
-    height:100vh;
+    min-height:100vh;
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -25,11 +24,22 @@ box-sizing:border-box;
 
 .cover-img{
     position:relative;
-    width:90%;        /* 🔥 ขยาย ~50% */
-    max-width:640px;   /* 🔥 เพิ่มตามสัดส่วน */
+    width:100%;        /* 🔥 ขยาย ~50% */
+    max-width:700px;   /* 🔥 เพิ่มตามสัดส่วน */
     height:auto;
     border-radius:20px;
     animation: popIn 1s ease forwards;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes popIn{
@@ -47,35 +57,26 @@ box-sizing:border-box;
 }
 
 #openBtn{
-    position:relative;
+    position:absolute;
+    bottom:30px;   /* 🔥 ลอยจากล่าง */
+
     padding:16px 45px;
     font-size:18px;
+
     border:none;
     border-radius:30px;
 
     background:linear-gradient(135deg,#6EC6FF,#3A7BFF);
     color:white;
 
-    box-shadow:0 10px 25px rgba(0,0,0,0.25); /* ✅ FIX */
-
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
     cursor:pointer;
+
     animation: fadeUp 1s ease 0.8s forwards;
     opacity:0;
+
     z-index:10;
-    margin-top:-150px;
 }
-
-@keyframes fadeUp{
-    from{
-        transform: translateY(20px);
-        opacity:0;
-    }
-    to{
-        transform: translateY(0);
-        opacity:1;
-    }
-}
-
 
 /* WEBSITE */
 
